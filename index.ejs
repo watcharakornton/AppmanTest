@@ -12,9 +12,14 @@
 <body>
     <form action="go" method="POST" >
         <div class="form-group" style="width: 100%;">
-          <label for="input" style="text-align:center; color:blue" > <H1><b>Input</b></H1></label>
-          <input type="text" class="form-control col-md-4" id="input" placeholder="Enter input" name="input" required>
-          <input type="text" class="form-control col-md-4"  placeholder="Output" readonly>
+            <label for="input" style="text-align:center; color:blue" > <H1><b>Input</b></H1></label>
+            <% if(input == '') { %>
+                <input type="text" class="form-control col-md-4" id="input" placeholder="Enter input" name="input" required>
+                <input type="text" class="form-control col-md-4"  placeholder="Output" value="<%= output %>" readonly>
+            <% } else { %> 
+                <input type="text" class="form-control col-md-4" id="input" placeholder="Enter input" name="input" value="<%= input %> " required>
+                <input type="text" class="form-control col-md-4"  placeholder="Output" value="<%= output %>" readonly>
+            <% } %> 
         </div>
         <button type="submit" class="btn btn-primary" style="text-align: center;" >Submit</button>
     </form>

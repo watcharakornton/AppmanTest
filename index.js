@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 app.post('/go', (req, res) => {
     let input = req.body.input;
     let type = typeof input;   
-    let output = input.replace(/[a-z]/g, "");
+    let output = input.replace(/[a-zA-Z]/g, "");
     console.log(`input: ${input} ,type input is ${type}`);
     console.log(`output: ${output}`)
     res.render('index.ejs', {
